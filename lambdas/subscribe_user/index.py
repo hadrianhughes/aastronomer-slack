@@ -8,5 +8,5 @@ def handler(event: dict, context: dict) -> dict:
 
     return {
         'statusCode': 200,
-        'message': text[0] if text else 'Need a postcode'
+        'body': text[0] if text else 'Need a postcode'
     }
