@@ -31,5 +31,10 @@ export class AAStronomerSlackStack extends cdk.Stack {
       methods: [apig.HttpMethod.POST],
       integration: subscribeUserIntegration
     })
+
+    new cdk.CfnOutput(this, 'APIEndpoint', {
+      exportName: 'SlackAPIEndpoint',
+      value: api.url!
+    })
   }
 }
